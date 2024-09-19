@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "index.html#what-is-r-software",
+    "href": "index.html#what-is-r-software",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "What is R software?",
+    "text": "What is R software?\n\nProgramming language\nSoftware environment\nHigh level programming language\nThe syntax is simple\nR has functions, graphics, statistical analysis in few lines of code -. Interpreted language\nR is free!!\nLots of documentation"
+  },
+  {
+    "objectID": "index.html#r-software-1",
+    "href": "index.html#r-software-1",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "R software",
+    "text": "R software\nCalculator\n\n5+5\n#&gt; [1] 10\n\nR is oriented to objects\n\\(&lt;-\\) assign simbol\n\na  &lt;- 3\na\n#&gt; [1] 3"
+  },
+  {
+    "objectID": "index.html#vectors-and-matrices",
+    "href": "index.html#vectors-and-matrices",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Vectors and matrices",
+    "text": "Vectors and matrices\nNumeric vectors\n\nnumeric &lt;- c( 1, 2, 3, 4, 5)\nnumeric\n#&gt; [1] 1 2 3 4 5\n\nCategoric vectors\n\ncategoric &lt;- c(\"blue\", \"green\", \"red\", \"yellow\")\ncategoric\n#&gt; [1] \"blue\"   \"green\"  \"red\"    \"yellow\"\n\nMatrices\n\nmat &lt;- matrix( c(1, 2, 3, 4, 5, 6, 7, 8),\n               ncol=4, byrow=TRUE)\nas.matrix(mat)\n#&gt;      [,1] [,2] [,3] [,4]\n#&gt; [1,]    1    2    3    4\n#&gt; [2,]    5    6    7    8"
+  },
+  {
+    "objectID": "index.html#data-frames",
+    "href": "index.html#data-frames",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Data frames",
+    "text": "Data frames\n\nbact &lt;- c(\"LM\",\"LM\",\"LM\", \"SA\",\"SA\",\"SA\")\ncounts &lt;- c(2.3,2.4,2.5,3.5,3.6,3.3)\ndat &lt;- data.frame(bact, counts)\ndat\n#&gt;   bact counts\n#&gt; 1   LM    2.3\n#&gt; 2   LM    2.4\n#&gt; 3   LM    2.5\n#&gt; 4   SA    3.5\n#&gt; 5   SA    3.6\n#&gt; 6   SA    3.3"
+  },
+  {
+    "objectID": "index.html#lists",
+    "href": "index.html#lists",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Lists",
+    "text": "Lists\n\nlist &lt;- list(dat[dat$Condition== 1,], mat)\n\n\nstr(list)\n#&gt; List of 2\n#&gt;  $ :'data.frame':    0 obs. of  2 variables:\n#&gt;   ..$ bact  : chr(0) \n#&gt;   ..$ counts: num(0) \n#&gt;  $ : num [1:2, 1:4] 1 5 2 6 3 7 4 8"
+  },
+  {
+    "objectID": "index.html#import-data",
+    "href": "index.html#import-data",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Import data",
+    "text": "Import data\n\nread.csv()\n\n\ndat &lt;- read.csv(\"./data/dataSet1.csv\", sep=\";\", header=T)\nhead(dat)\n#&gt;   time      X\n#&gt; 1    0  8.409\n#&gt; 2    1  8.416\n#&gt; 3    2  8.805\n#&gt; 4    3  9.903\n#&gt; 5    4 11.873\n#&gt; 6    5 13.042"
+  },
+  {
+    "objectID": "index.html#check-data",
+    "href": "index.html#check-data",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Check data",
+    "text": "Check data\n\nstructure()\n\n\nstr(dat)\n#&gt; 'data.frame':    8 obs. of  2 variables:\n#&gt;  $ time: int  0 1 2 3 4 5 7 9\n#&gt;  $ X   : num  8.41 8.42 8.8 9.9 11.87 ..."
+  },
+  {
+    "objectID": "index.html#control-structures",
+    "href": "index.html#control-structures",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Control structures",
+    "text": "Control structures\nLoops\n\nfor () {}\n\n\nfor (n in 1:3){\n  print(3^n)\n}\n#&gt; [1] 3\n#&gt; [1] 9\n#&gt; [1] 27\n\nConditions\n\nif (){} else{}\n\n\ncounts = 2\nif (counts &lt; 3) {\n  print(\"lower than 3\")\n} else {\n  print(\"higher than 3\")\n}\n#&gt; [1] \"lower than 3\""
+  },
+  {
+    "objectID": "index.html#functions",
+    "href": "index.html#functions",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Functions",
+    "text": "Functions\n\nWeibull &lt;- function(x, logN0, chi, beta){\n  logN0 - (x/chi)^beta\n}\n\n\n#&gt; [1] 0.0 0.5 1.0 1.5 2.0\n#&gt; [1] 4.000000 3.297192 2.934743 2.641345 2.385372"
+  },
+  {
+    "objectID": "index.html#plots",
+    "href": "index.html#plots",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Plots",
+    "text": "Plots\n\nplot(x, results)"
+  },
+  {
+    "objectID": "index.html#packages",
+    "href": "index.html#packages",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": " packages",
+    "text": "packages\n\n# load libraries\nlibrary(ggplot2)    # for plotting"
+  },
+  {
+    "objectID": "index.html#read-data",
+    "href": "index.html#read-data",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Read data",
+    "text": "Read data\n\ndat &lt;- read.csv(\"./data/dataSet1.csv\", sep=\";\", header=T)\nhead(dat)\n#&gt;   time      X\n#&gt; 1    0  8.409\n#&gt; 2    1  8.416\n#&gt; 3    2  8.805\n#&gt; 4    3  9.903\n#&gt; 5    4 11.873\n#&gt; 6    5 13.042"
+  },
+  {
+    "objectID": "index.html#mathematical-function",
+    "href": "index.html#mathematical-function",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Mathematical function",
+    "text": "Mathematical function\n\\[Y=Y_0 \\times e^{\\mu \\times t} \\]\n\n\\(Y=ln(X)\\)\n\\(Y_0=ln(X_0)\\)\n\nDefining the function\n\nExpoGrowth = function(t, mu, Y0){\n      Y = Y0*exp(mu*t)\nreturn(Y)\n}"
+  },
+  {
+    "objectID": "index.html#fitting-model-to-data",
+    "href": "index.html#fitting-model-to-data",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Fitting model to data",
+    "text": "Fitting model to data\n\nnls() function\n\n\nm1 &lt;- nls(X ~ ExpoGrowth(time, mu, Y0),\n           data=dat,\n           start=list(mu=0.73, Y0=8.5) )\nm1\n#&gt; Nonlinear regression model\n#&gt;   model: X ~ ExpoGrowth(time, mu, Y0)\n#&gt;    data: dat\n#&gt;      mu      Y0 \n#&gt; 0.09262 7.87319 \n#&gt;  residual sum-of-squares: 1.549\n#&gt; \n#&gt; Number of iterations to convergence: 9 \n#&gt; Achieved convergence tolerance: 4.034e-07"
+  },
+  {
+    "objectID": "index.html#results",
+    "href": "index.html#results",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Results",
+    "text": "Results\nSummarise the results\n\nsummary(m1)\n#&gt; \n#&gt; Formula: X ~ ExpoGrowth(time, mu, Y0)\n#&gt; \n#&gt; Parameters:\n#&gt;    Estimate Std. Error t value Pr(&gt;|t|)    \n#&gt; mu 0.092622   0.005075   18.25 1.74e-06 ***\n#&gt; Y0 7.873187   0.247426   31.82 6.40e-08 ***\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; \n#&gt; Residual standard error: 0.508 on 6 degrees of freedom\n#&gt; \n#&gt; Number of iterations to convergence: 9 \n#&gt; Achieved convergence tolerance: 4.034e-07\n\nExtract the coefficients\n\n(betas1 &lt;-coef(m1))\n#&gt;         mu         Y0 \n#&gt; 0.09262218 7.87318661\nmu &lt;- betas1[1]\nY0 &lt;- betas1[2]"
+  },
+  {
+    "objectID": "index.html#predicted-values",
+    "href": "index.html#predicted-values",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Predicted values",
+    "text": "Predicted values\n\nPlotting the observations against the fitted line\nAuxiliary time vector: time.levels\n\n\ntime.levels &lt;- dat$time\n\n\nplot(X ~ time,\n     data=dat,\n     xlim=c(0, 10), ylim=c(5,20))\nlines(time.levels, \n      ExpoGrowth(time.levels, \n              mu=mu, Y0=Y0),\n      lty=2,lwd=2,col = \"blue\")"
+  },
+  {
+    "objectID": "index.html#fitting-quality",
+    "href": "index.html#fitting-quality",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Fitting quality",
+    "text": "Fitting quality\n\nAIC and BIC functions\n\n\nAIC(m1)\n#&gt; [1] 15.56672\nBIC(m1)\n#&gt; [1] 15.80504"
+  },
+  {
+    "objectID": "index.html#conclusions",
+    "href": "index.html#conclusions",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "Conclusions",
+    "text": "Conclusions\n\nR is a powerful programming tool\nR is powerful to visualise, prepare and clean data\nR is powerful to fit mathematical models\nR is powerful to teach and comunicate science"
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "References",
+    "text": "References\n\n\nCadavez, Vasco AP, and Arne Henningsen. 2012. “The Use of Seemingly Unrelated Regression (SUR) to Predict the Carcass Composition of Lambs.” Meat Science 92: 548–53.\n\n\nGonzales-Barron, Ursula Andrea, Vasco Augusto Pilão Cadavez, and Francis Butler. 2013. “Statistical Approaches for the Design of Sampling Plans for Microbiological Monitoring of Foods.” In Mathematical and Statistical Methods in Food Science and Technology, 363–84. John Wiley & Sons, Ltd.\n\n\nSilva, SR, and VP Cadavez. 2012. “Real-Time Ultrasound (RTU) Imaging Methods for Quality Control of Meats.” In Computer Vision Technology in the Food and Beverage Industries, 277–329. Woodhead Publishing Ltd.\n\n\nXavier, Cristina, U Gonzales-Barron, V Paula, L Estevinho, and V Cadavez. 2014. “Meta-Analysis of the Incidence of Foodborne Pathogens in Portuguese Meats and Their Products.” Food Research International 55: 311–23."
+  },
+  {
+    "objectID": "index.html#the-end",
+    "href": "index.html#the-end",
+    "title": "A PAS-AGRO-PAS Quarto Revealjs Presentation Template",
+    "section": "The end",
+    "text": "The end\nObrigado!\nMuchas gracias!\nMerci beaucoup!\nThank you!\n\n\n\n\nCode available in GitHub: pas-agro-pas.github.io"
+  }
+]

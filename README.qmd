@@ -1,0 +1,37 @@
+# The Making of Fragile Agro-ecosystems Productive, Adaptive and Sustainable: Multifunctional Agro-pastoralism
+____________________
+
+<img src="./images/hex-logo.png" width="25%">
+[![](./images/logo.png){width=200}](https://pas-agro-pas.github.io)
+
+____________________
+
+## Quarto PAS-AGRO-PAS revealjs theme
+
+This is a presentation theme for the [PAS-AGRO-PAS project](www.pas-agro-pas.ipb.pt). You can find the demo slides at: [https://pas-agro-pas.github.io/pas-agro-pas-presentation-template](https://pas-agro-pas.github.io/pas-agro-pas-presentation-template).
+
+## How to use
+
+1. Install [R (https://cran.r-project.org/)](https://cran.r-project.org/)
+
+2. Install [rstudio (https://posit.co/products/open-source/rstudio/)](https://posit.co/products/open-source/rstudio/)
+
+3. Install [quarto (https://quarto.org/docs/get-started/)](https://quarto.org/docs/get-started/)
+
+4. Copy the template files to a new working directory using the following code:
+
+```bash
+quarto use template pas-agro-pas/pas-agro-pas-presentation-template
+```
+
+The R code included in this template require the following R packages:
+dplyr, ggplot2, gt, knitr, ragg, rmarkdown, scico, stringr, tidyr
+
+You do not necessarily need these packages if you are not rendering the examples in the template.
+You *will* need [quarto v1.3.0](https://quarto.org/docs/get-started/) or greater installed on your system.
+
+## Changelog
+
+### v1.0.0
+
+- Initial release.

@@ -1,0 +1,324 @@
+---
+title: "A PAS-AGRO-PAS Quarto Revealjs Presentation Template"
+subtite: "Adapt According to Your needs"
+format: 
+  revealjs:
+    theme: pas-agro-pas.scss
+    title-slide-attributes:
+      data-background-image: images/logo.png
+      data-background-size: "25%"
+      background-position: top right 10px
+editor: source
+author:
+  - name: "Vasco Cadavez"
+    id: vc
+    orcid: 0000-0002-3077-7414
+    email: vcadavez@ipb.pt
+    affiliation: 
+      - name: Politechnic Institute of Bragança
+        city: Bragança, Portugal
+        url: www.ipb.pt
+  - name: "Ursula Gonzales-Barron"
+    id: ub
+    orcid: 0000-0002-8462-9775
+    email: ubarron@ipb.pt
+    affiliation: 
+      - name: Moutain research Centre
+        city: Bragança, Portugal
+        url: www.cimo.ipb.pt
+logo: ./images/logo.png
+footer: "Code available in GitHub:  [pas-agro-pas.github.io](pas-agro-pas.github.io)"
+bibliography: references.bib
+---
+
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, warning = FALSE, message = FALSE,
+  comment = "#>"
+)
+```
+
+# R Software {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+## What is R software? {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+> - Programming language
+> - Software environment
+> - High level programming language
+> - The syntax is simple
+> - R  has functions, graphics, statistical analysis in few lines of code
+> -. Interpreted language
+> - R is free!!
+> - [Lots of documentation](https://cran.r-project.org/)
+
+## R software {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+### Calculator {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+```{r, echo = TRUE}
+5+5
+```
+
+### R is oriented to objects
+
+$<-$ assign simbol
+
+```{r, echo = TRUE}
+a  <- 3
+a
+```
+
+## Vectors and matrices {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+### Numeric vectors
+
+```{r, echo = TRUE}
+numeric <- c( 1, 2, 3, 4, 5)
+numeric
+```
+
+### Categoric vectors
+
+```{r, echo = TRUE}
+categoric <- c("blue", "green", "red", "yellow")
+categoric
+```
+
+
+### Matrices
+
+```{r, echo = TRUE}
+mat <- matrix( c(1, 2, 3, 4, 5, 6, 7, 8),
+               ncol=4, byrow=TRUE)
+as.matrix(mat)
+```
+
+
+## Data frames {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+```{r, echo = TRUE}
+bact <- c("LM","LM","LM", "SA","SA","SA")
+counts <- c(2.3,2.4,2.5,3.5,3.6,3.3)
+dat <- data.frame(bact, counts)
+dat
+```
+
+## Lists {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+```{r, echo = TRUE}
+list <- list(dat[dat$Condition== 1,], mat)
+```
+
+
+```{r, echo = TRUE}
+str(list)
+```
+
+
+## Import data {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+- read.csv()
+
+```{r, echo = TRUE}
+dat <- read.csv("./data/dataSet1.csv", sep=";", header=T)
+head(dat)
+```
+
+## Check data {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+- structure()
+
+```{r, echo = TRUE}
+str(dat)
+```
+
+
+## Control structures {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+### Loops
+
+- for () {}
+
+```{r, echo = TRUE}
+for (n in 1:3){
+  print(3^n)
+}
+```
+
+
+### Conditions {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+- if (){}  else{}
+
+```{r, echo = TRUE}
+counts = 2
+if (counts < 3) {
+  print("lower than 3")
+} else {
+  print("higher than 3")
+}
+```
+
+## Functions {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+```{r, echo = TRUE}
+Weibull <- function(x, logN0, chi, beta){
+  logN0 - (x/chi)^beta
+}
+```
+
+```{r}
+x <- seq(0, 10, 0.5)
+x[1:5]
+results  <- Weibull(x, 4, 0.9, 0.6)
+results[1:5]
+```
+
+## Plots {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+
+```{r , out.width="40%", echo = TRUE}
+plot(x, results)
+```
+
+
+# Fitting models to data {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+## \R{} packages {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+```{r, echo = TRUE}
+# load libraries
+library(ggplot2)    # for plotting
+```
+
+
+## Read data {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+```{r, echo = TRUE}
+dat <- read.csv("./data/dataSet1.csv", sep=";", header=T)
+head(dat)
+```
+
+# Exponential growth model {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+## Mathematical function {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+
+$$Y=Y_0 \times e^{\mu \times t} $$
+
+- $Y=ln(X)$
+- $Y_0=ln(X_0)$
+
+
+
+### Defining the function
+
+```{r, echo = TRUE}
+ExpoGrowth = function(t, mu, Y0){
+      Y = Y0*exp(mu*t)
+return(Y)
+}
+```
+
+## Fitting model to data {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+- `nls()` function
+```{r, echo = TRUE}
+m1 <- nls(X ~ ExpoGrowth(time, mu, Y0),
+           data=dat,
+           start=list(mu=0.73, Y0=8.5) )
+m1
+```
+
+## Results {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+### Summarise the results
+
+```{r, echo = TRUE}
+summary(m1)
+```
+
+### Extract the coefficients
+
+```{r, echo = TRUE}
+(betas1 <-coef(m1))
+mu <- betas1[1]
+Y0 <- betas1[2]
+```
+
+## Predicted values {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+- Plotting the observations against the fitted line
+
+- Auxiliary time vector: **time.levels**
+
+```{r , echo=TRUE, eval=FALSE}
+time.levels <- dat$time
+```
+
+```{r , echo=TRUE, eval=FALSE}
+plot(X ~ time,
+     data=dat,
+     xlim=c(0, 10), ylim=c(5,20))
+lines(time.levels, 
+      ExpoGrowth(time.levels, 
+              mu=mu, Y0=Y0),
+      lty=2,lwd=2,col = "blue")
+```
+
+
+```{r ObsPred, echo=FALSE, anchor="figure",  out.width="50%", fig.align="center", fig.cap=" \\label{fig:ObsPred}"}
+plot(X ~ time, data=dat,
+            xlim=c(0, 10), ylim=c(5, 20))
+#time.levels <- seq(0, 15, by=1)
+time.levels <- dat$time
+lines(time.levels, 
+      ExpoGrowth(time.levels, 
+               mu=mu,Y0=Y0),
+              lty = 2, lwd=2, col = "blue")
+```
+
+## Fitting quality {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+- **AIC** and **BIC** functions
+
+```{r, echo = TRUE}
+AIC(m1)
+BIC(m1)
+```
+
+
+## Conclusions {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+1. **R** is a powerful programming tool
+
+2. **R** is powerful to visualise, prepare and clean data
+
+3. **R** is powerful to fit mathematical models
+
+4. **R** is powerful to teach and comunicate science
+
+
+## References {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+---
+nocite: |
+  @cadavez2012sur, @xavier2014meta, @silva2012rtu, @gonzales2013sampling
+---
+
+::: {#refs}
+:::
+
+
+
+## The end {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+
+
+
+**Obrigado!**
+
+**Muchas gracias!**
+
+**Merci beaucoup!**
+
+**Thank you!**
