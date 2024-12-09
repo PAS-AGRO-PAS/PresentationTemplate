@@ -1,13 +1,13 @@
 ---
-title: "A PAS-AGRO-PAS Quarto Revealjs Presentation Template"
-subtite: "Adapt According to Your needs"
+title: "PAS-AGRO-PAS Presentation Template"
+subtitle: "Adapt According to Your needs"
 format: 
   revealjs:
     theme: pas-agro-pas.scss
-    title-slide-attributes:
-      data-background-image: images/logo.png
-      data-background-size: "25%"
-      background-position: top right 10px
+#    title-slide-attributes:
+      # data-background-image: ./images/colourwatermark.png
+      # data-background-size: "15%"
+      # background-position: "top right 25px"
 editor: source
 author:
   - name: "Vasco Cadavez"
@@ -23,11 +23,11 @@ author:
     orcid: 0000-0002-8462-9775
     email: ubarron@ipb.pt
     affiliation: 
-      - name: Moutain research Centre
+      - name: Mountain research Centre
         city: Bragança, Portugal
         url: www.cimo.ipb.pt
-logo: ./images/logo.png
-footer: "Code available in GitHub:  [pas-agro-pas.github.io](pas-agro-pas.github.io)"
+#logo: ./images/logo.png
+footer: "PAS-AGRO-PAS - Code available in GitHub:  [pas-agro-pas.github.io](pas-agro-pas.github.io)"
 bibliography: references.bib
 ---
 
@@ -38,9 +38,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-# R Software {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+# R Software {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
-## What is R software? {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## What is R software? {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 > - Programming language
 > - Software environment
@@ -51,9 +51,9 @@ knitr::opts_chunk$set(
 > - R is free!!
 > - [Lots of documentation](https://cran.r-project.org/)
 
-## R software {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## R software {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
-### Calculator {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+### Calculator {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 ```{r, echo = TRUE}
 5+5
@@ -68,7 +68,7 @@ a  <- 3
 a
 ```
 
-## Vectors and matrices {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Vectors and matrices {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 ### Numeric vectors
 
@@ -94,7 +94,7 @@ as.matrix(mat)
 ```
 
 
-## Data frames {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Data frames {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 ```{r, echo = TRUE}
 bact <- c("LM","LM","LM", "SA","SA","SA")
@@ -103,7 +103,7 @@ dat <- data.frame(bact, counts)
 dat
 ```
 
-## Lists {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Lists {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 ```{r, echo = TRUE}
 list <- list(dat[dat$Condition== 1,], mat)
@@ -115,7 +115,7 @@ str(list)
 ```
 
 
-## Import data {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Import data {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 - read.csv()
 
@@ -124,7 +124,7 @@ dat <- read.csv("./data/dataSet1.csv", sep=";", header=T)
 head(dat)
 ```
 
-## Check data {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Check data {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 - structure()
 
@@ -133,11 +133,9 @@ str(dat)
 ```
 
 
-## Control structures {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Control structures {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
-### Loops
-
-- for () {}
+### Loops: `for () {}`
 
 ```{r, echo = TRUE}
 for (n in 1:3){
@@ -146,9 +144,7 @@ for (n in 1:3){
 ```
 
 
-### Conditions {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
-
-- if (){}  else{}
+### Conditions: `if (){}  else{}`
 
 ```{r, echo = TRUE}
 counts = 2
@@ -159,7 +155,7 @@ if (counts < 3) {
 }
 ```
 
-## Functions {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Functions {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 ```{r, echo = TRUE}
 Weibull <- function(x, logN0, chi, beta){
@@ -174,7 +170,7 @@ results  <- Weibull(x, 4, 0.9, 0.6)
 results[1:5]
 ```
 
-## Plots {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Plots {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 
 ```{r , out.width="40%", echo = TRUE}
@@ -182,9 +178,9 @@ plot(x, results)
 ```
 
 
-# Fitting models to data {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+# Fitting models to data {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
-## \R{} packages {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## \R{} packages {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 ```{r, echo = TRUE}
 # load libraries
@@ -192,16 +188,16 @@ library(ggplot2)    # for plotting
 ```
 
 
-## Read data {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Read data {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 ```{r, echo = TRUE}
 dat <- read.csv("./data/dataSet1.csv", sep=";", header=T)
 head(dat)
 ```
 
-# Exponential growth model {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+# Exponential growth model {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
-## Mathematical function {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Mathematical function {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 
 $$Y=Y_0 \times e^{\mu \times t} $$
@@ -220,7 +216,7 @@ return(Y)
 }
 ```
 
-## Fitting model to data {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Fitting model to data {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 - `nls()` function
 ```{r, echo = TRUE}
@@ -230,7 +226,7 @@ m1 <- nls(X ~ ExpoGrowth(time, mu, Y0),
 m1
 ```
 
-## Results {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Results {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 ### Summarise the results
 
@@ -238,6 +234,7 @@ m1
 summary(m1)
 ```
 
+## Results {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 ### Extract the coefficients
 
 ```{r, echo = TRUE}
@@ -246,7 +243,7 @@ mu <- betas1[1]
 Y0 <- betas1[2]
 ```
 
-## Predicted values {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Predicted values {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 - Plotting the observations against the fitted line
 
@@ -278,7 +275,7 @@ lines(time.levels,
               lty = 2, lwd=2, col = "blue")
 ```
 
-## Fitting quality {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Fitting quality {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 - **AIC** and **BIC** functions
 
@@ -288,7 +285,7 @@ BIC(m1)
 ```
 
 
-## Conclusions {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## Conclusions {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 1. **R** is a powerful programming tool
 
@@ -299,7 +296,7 @@ BIC(m1)
 4. **R** is powerful to teach and comunicate science
 
 
-## References {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## References {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 ---
 nocite: |
@@ -311,7 +308,7 @@ nocite: |
 
 
 
-## The end {background-image="images/logo.png" background-size="30%" background-position="top right 10px"}
+## The end {background-image="images/colourwatermark.png" background-size="10%" background-position="top right 15px"}
 
 
 

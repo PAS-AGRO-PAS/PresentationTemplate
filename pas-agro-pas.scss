@@ -6,10 +6,10 @@
 $font-family-sans-serif: Lato, sans-serif !default;
 
 // colors
-$body-bg: #FEFAE0!default;
-$body-color: #8c440e  !default;
-$link-color: #a7cf23 !default;
-$selection-bg: #F9EBC7 !default;
+$body-bg: #FFFFFF !default;
+$body-color: #B17F49  !default;
+$link-color: #A3BF4E !default;
+$selection-bg: #CBBBA0 !default;
   
 // headings
 $presentation-heading-font: "League Gothic", sans-serif !default;
@@ -17,17 +17,17 @@ $presentation-heading-text-transform: uppercase !default;
 $presentation-heading-font-weight: normal !default;
 $presentation-h1-font-size: 1.8em !default;
 $presentation-heading-letter-spacing: 0.02em;
-$presentation-heading-color: #5F6F52 !default;
+$presentation-heading-color: #A3BF4E !default;
 
 // code blocks
-$code-block-border-color: #ad4410 !default;
+$code-block-border-color: #CBBBA0 !default;
 $code-block-bg: transparent !default;
 
 /*-- scss:mixins --*/
 
 // Background generator
 @mixin bodyBackground() {
-  @include radial-gradient(#fcf5c5, #FEFAE0);
+  @include radial-gradient(#FFFFFF, #FFFFFF);
 }
 
 /*-- scss:rules --*/
